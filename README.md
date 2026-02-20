@@ -1,7 +1,5 @@
 # Renfe_EDA_Project
 
-Data Analysis and Cleaning (Data Wrangling) project on Renfe tickets. Preparation, Exploratory Data Analysis (EDA), and preprocessing of a massive dataset for a future price-prediction Machine Learning model. This was one of the first projects I completed during my Data Science Master's degree, where I achieved a 10/10 grade.
-
 # Data Analysis and Preprocessing: Renfe Ticket Prices 🚄
 
 This repository contains a project purely focused on **data cleaning, exploratory data analysis (EDA), and preprocessing**. This is the fundamental and most crucial step before training any Machine Learning algorithm.
