@@ -1,5 +1,5 @@
 # proyecto_Renfe_EDA
-Proyecto de Análisis y Limpieza de Datos (Data Wrangling) sobre billetes de Renfe. Preparación, exploración (EDA) y preprocesamiento de un dataset masivo para un futuro modelo de Machine Learning predictivo de precios.
+Proyecto de Análisis y Limpieza de Datos (Data Wrangling) sobre billetes de Renfe. Preparación, exploración (EDA) y preprocesamiento de un dataset masivo para un futuro modelo de Machine Learning predictivo de precios. Fue uno de los primeros proyectos que realicé en el máster de Data Science donde obtuve una calificación de 10/10
 
 # Análisis y Preprocesamiento de Datos: Precios de Renfe 🚄
 
