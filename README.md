@@ -1,35 +1,29 @@
-# proyecto_Renfe_EDA
-Proyecto de Análisis y Limpieza de Datos (Data Wrangling) sobre billetes de Renfe. Preparación, exploración (EDA) y preprocesamiento de un dataset masivo para un futuro modelo de Machine Learning predictivo de precios. Fue uno de los primeros proyectos que realicé en el máster de Data Science donde obtuve una calificación de 10/10
+# Renfe_EDA_Project
 
-# Análisis y Preprocesamiento de Datos: Precios de Renfe 🚄
+Data Analysis and Cleaning (Data Wrangling) project on Renfe tickets. Preparation, Exploratory Data Analysis (EDA), and preprocessing of a massive dataset for a future price-prediction Machine Learning model. This was one of the first projects I completed during my Data Science Master's degree, where I achieved a 10/10 grade.
 
-Este repositorio contiene un proyecto enfocado puramente en la **limpieza, análisis exploratorio (EDA) y preprocesamiento de datos**. Es el paso previo y fundamental antes de entrenar cualquier algoritmo de Machine Learning.
+# Data Analysis and Preprocessing: Renfe Ticket Prices 🚄
 
-## 🎯 Objetivo del Proyecto
-El objetivo es transformar un conjunto de datos "en bruto" (información de búsquedas reales de billetes en la web de Renfe) en un formato numérico y limpio, listo para ser ingerido por un modelo predictivo que intente adivinar el precio de los billetes.
+This repository contains a project purely focused on **data cleaning, exploratory data analysis (EDA), and preprocessing**. This is the fundamental and most crucial step before training any Machine Learning algorithm.
 
-## 🛠️ Herramientas Utilizadas
-- **Lenguaje:** Python
-- **Manipulación de Datos:** Pandas, Numpy
-- **Visualización:** Matplotlib, Seaborn, Plotly (para mapas interactivos)
+## 🎯 Project Objective
+The goal is to transform a "raw" dataset (real ticket search data from the Renfe website) into a clean, numerical format, ready to be ingested by a predictive model that attempts to estimate ticket prices.
 
-## 🧹 El Proceso de Data Wrangling (Limpieza y Transformación)
-Los datos del mundo real nunca vienen perfectos. En este proyecto se han realizado las siguientes fases clave:
+## 🛠️ Tools & Technologies
+- **Language:** Python
+- **Data Manipulation:** Pandas, Numpy
+- **Visualization:** Matplotlib, Seaborn, Plotly (for interactive maps)
 
-1. **Tratamiento de Nulos y Duplicados:** - Se eliminaron filas duplicadas y registros con datos faltantes en columnas clave (como la clase del billete o el tipo de tarifa).
-   - Los valores nulos en la columna `precio` se imputaron (rellenaron) utilizando la media estadística.
-   - Se detectaron y eliminaron valores atípicos (billetes con precio de 0€).
+## 🧹 The Data Wrangling Process
+Real-world data is never perfect. This project covers the following key phases to ensure data quality:
 
-2. **Ingeniería de Características (Feature Engineering):**
-   - Las máquinas no entienden fechas en formato texto. Se extrajeron el día, mes, día de la semana y la hora exacta de salida.
-   - Se calculó una nueva variable muy valiosa: el **tiempo de viaje** (restando la fecha de llegada y la de salida).
-   - Se cruzó el dataset original con un archivo externo de coordenadas (`coordenadas_ciudades.csv`) para dotar al proyecto de información geoespacial.
+1. **Handling Nulls and Duplicates:** Removed duplicate rows and records with missing data in key columns (like ticket class or fare type). Null values in the `price` column were imputed (filled) using the statistical mean. Outliers (such as tickets priced at 0€) were detected and removed.
 
-3. **Codificación de Variables Categóricas (One-Hot Encoding):**
-   - Los algoritmos matemáticos no saben leer palabras como "Turista" o "Promo". Se aplicó una técnica llamada *One-Hot Encoding*, que transforma estas categorías en nuevas columnas de ceros y unos. El dataset pasó de tener 13 columnas a 58 columnas estructuradas y listas para modelizar.
+2. **Feature Engineering:** Machines don't understand dates in text format. We extracted the day, month, day of the week, and exact departure time into separate columns. A highly valuable new variable was also calculated: **travel time** (subtracting departure time from arrival time). Finally, the dataset was merged with an external coordinate file (`coordenadas_ciudades.csv`) to add geospatial context.
 
-## 💡 Conclusiones del Análisis Exploratorio
-Durante la exploración visual y el análisis de correlación, surgió un hallazgo muy importante para el futuro modelo:
+3. **Categorical Variable Encoding (One-Hot Encoding):** Mathematical algorithms cannot read categorical words like "Tourist" or "Promo". A technique called *One-Hot Encoding* was applied, transforming these categories into new columns of zeros and ones. The dataset went from having 13 raw columns to 58 structured features ready for modeling.
 
-* **El precio no depende de los números, sino de las categorías.** No se encontró ninguna correlación fuerte (superior a 0.5) entre el precio y las variables puramente numéricas (como la duración del viaje en minutos o las coordenadas de la ciudad). 
-* Esto nos indica que el algoritmo que intente predecir el precio tendrá que darle mucho más peso a las variables categóricas, como el `tipo_tarifa`, la `clase` o el `tipo_tren`.
+## 💡 EDA Conclusions
+During visual exploration and correlation analysis, a crucial finding emerged for the future predictive model. 
+
+**Price depends on categories, not numbers.** No strong correlation (greater than 0.5) was found between the ticket price and purely numerical variables (like travel duration in minutes or city coordinates). This indicates that the future price-predicting algorithm will need to give much more weight to categorical variables, such as `fare_type`, `class`, or `train_type`.
